@@ -6,8 +6,26 @@
 # 3. 在命令行窗口输入： qq plug sample
 
 def onQQMessage(bot, contact, member, content):
-    if content == '-hello':
-        bot.SendTo(contact, '你好，我是QQ机器人')
-    elif content == '-stop':
-        bot.SendTo(contact, 'QQ机器人已关闭')
-        bot.Stop()
+    if '开车' in content:
+        bot.SendTo(contact, '假的，这你也信')
+		
+    if 'zzs' in content:
+        bot.SendTo(contact, 'mua!~')
+		
+    if 'txt' in member.name:
+        bot.SendTo(contact, '甜心！~')
+		
+    if '凛冬已至' in member.name:
+        bot.SendTo(contact, '凛冬未至')
+		
+    if contact.name == '17没有发动机':
+        if content != member.name+'!~':
+            bot.SendTo(contact, member.name+'!~')
+		
+    if contact.name == 'qqbot测试':
+        if content != 'nbiujbuijob':
+            bot.SendTo(contact, member.name)
+    
+    #if ('2018' in contact.name) and ('-' in member.name):
+        #bot.SendTo(contact, '学妹！')
+    print(member.name)
